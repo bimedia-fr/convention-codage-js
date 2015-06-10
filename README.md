@@ -13,7 +13,7 @@ Syntaxe générale
     var item = {};
     ```
 
-  - Eviter d' utiliser de [mots réservés](http://es5.github.io/#x7.6.1) comme clé d'objet.
+  - Eviter d'utiliser de [mots réservés](http://es5.github.io/#x7.6.1) comme clé d'objet.
 
     ```javascript
     // bad
