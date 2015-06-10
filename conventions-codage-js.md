@@ -925,6 +925,27 @@ Un fichier de source trop gros indique qu'il faut découper et modulariser le co
     L'imbrication de nombreuses méthodes asynchrones rends le flux d'exécution très difficilement compréhensible.
     Extraires les méthode et le nommer. Dans le cas d'appels nombreux utiliser la 
     librairie [async](https://www.npmjs.org/package/async).
+    
+        ```javascript
+    // bad
+    var results = [];
+    fs.stat('file1', function (err1, res1) {
+        results.push(res1);
+        fs.stat('file2', function (err2, res2) {
+            results.push(res2);
+            fs.stat('file3', function (err3, res3) {
+                results.push(res3);
+                console.log(results);
+            });
+        });
+    });
+
+    // good
+    async.map(['file1','file2','file3'], fs.stat, function(err, results){
+        // results is now an array of stats for each file
+        console.log(results);
+    });
+    ```
 
   - Garder les appels asynchrones
 
@@ -933,7 +954,7 @@ Un fichier de source trop gros indique qu'il faut découper et modulariser le co
 
     ```javascript
     // bad
-    _function _listStocks(context, cb) {
+    function _listStocks(context, cb) {
         if (context.confirmedAt) {
             return cb(null); //called synchronously
         }
@@ -943,7 +964,7 @@ Un fichier de source trop gros indique qu'il faut découper et modulariser le co
     };
 
     // good
-    _function _listStocks(context, cb) {
+    function _listStocks(context, cb) {
         if (context.confirmedAt) {
             setTimeout(cb); //called asynchronously
             return; 
