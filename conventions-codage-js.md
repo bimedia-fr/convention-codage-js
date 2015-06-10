@@ -403,15 +403,16 @@ Voici un rappel des règles de hissage des symboles dans le scope en javascript 
     if (name) {
       // ...stuff...
     }
+    ```
 
   - Pour plus d'information [Truth Equality and JavaScript](http://javascriptweblog.wordpress.com/2011/02/07/truth-equality-and-javascript/#more-2108) par Angus Croll.
 
 
 ## Indentation
 
-    * Indentation avec **4 espaces**, pas de tabulations.
+ * Indentation avec **4 espaces**, pas de tabulations.
 
-    * retours à la ligne après **140 charactères** par ligne max.
+ * retours à la ligne après **140 charactères** par ligne max.
 
 ### Accolades
 
@@ -660,8 +661,6 @@ Voici un rappel des règles de hissage des symboles dans le scope en javascript 
     var hasAge = !!age;
     ```
 
-
-
 ## Conventions de nommage
 
 ### déclarations de functions / variables
@@ -816,7 +815,7 @@ Voici un rappel des règles de hissage des symboles dans le scope en javascript 
 
 ### utilisation du ternaire
 
-  - Préférer l'utilisation de l'opérateur `||` pour gérer les valeurs par défaut.
+  - Préférer l'utilisation de l'opérateur `||` pour gérer les valeurs par défaut lorque cela est possible.
 
     ```javascript
     return val ? val : 'default';
@@ -836,13 +835,13 @@ est [compliquée, risquée](https://github.com/felixge/node-style-guide#do-not-e
 
 ### Garder des fonctions petites
 
-  - Les fonctions ne doivent pas faire plus de 25 lignes.
+  - Les fonctions ne doivent pas faire plus de **25 lignes**.
 
 Une fonction doit faire une seule chose et doit être facilement compréhensible.
 
 ### Garder des fichiers petits
 
-  - Les fichiers ne doivent pas faire plus de 750 lignes.
+  - Les fichiers ne doivent pas faire plus de **750 lignes**.
 
 Un fichier de source trop gros indique qu'il faut découper et modulariser le code.
 
@@ -867,6 +866,12 @@ Un fichier de source trop gros indique qu'il faut découper et modulariser le co
   - Assigner les expression booléénnes à des variable pour expliciter la condition.
 
     ```javascript
+    // bad
+    if (password.length >= 4  && /^(?=.*\d).{4,}$/.test(password)) {
+      console.log('winning');
+    }
+    
+    // good
     var isValidPassword = password.length >= 4 
 			        && /^(?=.*\d).{4,}$/.test(password);
 
