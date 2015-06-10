@@ -1,5 +1,3 @@
-% Conventions de codage Javascript
-
 Syntaxe générale
 ---------------------
 
