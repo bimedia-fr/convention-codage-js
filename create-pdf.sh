@@ -1,1 +1,1 @@
-create-page-pdf.sh README.md && mv README.pdf convention-codage-js.pdf
+create-page-pdf.sh README.md && mv README.pdf conventions-codage-js.pdf
