@@ -926,7 +926,7 @@ Un fichier de source trop gros indique qu'il faut découper et modulariser le co
     Extraires les méthode et le nommer. Dans le cas d'appels nombreux utiliser la 
     librairie [async](https://www.npmjs.org/package/async).
     
-        ```javascript
+    ```javascript
     // bad
     var results = [];
     fs.stat('file1', function (err1, res1) {
@@ -939,9 +939,10 @@ Un fichier de source trop gros indique qu'il faut découper et modulariser le co
             });
         });
     });
-
+    
     // good
-    async.map(['file1','file2','file3'], fs.stat, function(err, results){
+    async.map(['file1','file2','file3'], fs.stat, 
+       function(err, results){
         // results is now an array of stats for each file
         console.log(results);
     });
