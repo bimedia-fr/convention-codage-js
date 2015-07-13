@@ -1,3 +1,29 @@
+## Table des Matières
+
+  1. [Objects](#objects)
+  1. [Arrays](#arrays)
+  1. [Strings](#strings)
+  1. [Fonctions](#fonctions)
+  1. [Properties](#properties)
+  1. [Variables](#variables)
+  1. [Règles de hissage (Hoisting)](#hoisting)
+  1. [Opérateurs de comparaison & Egalité](#comparaison)
+  1. [Indentation](#indentation)
+  1. [Accolades](#accolades)
+  1. [Virgules](#virgules)
+  1. [Point virgules](#point-virgules)
+  1. [Trans-typage & coercition de type](#coercition)
+  1. [Conventions de nommage](#conventions-de-nommage)
+  1. [Accesseurs](#accesseurs)
+  1. [Constructeurs](#constructeurs)
+  1. [Structures du langage](#structures-du-langage)
+  1. [Règles de codage](#règles-de-codage)
+  1. [Spécificités AngularJS](#spécificités-angularjs)
+  1. [Spécificités Node.JS](#spécificités-nodejs)
+  1. [Sources](#sources)
+
+
+
 Syntaxe générale
 ---------------------
 
@@ -28,6 +54,9 @@ Syntaxe générale
       hidden: true
     };
     ```
+
+**[⬆ retour en haut](#table-des-matières)**
+    
 ## Arrays
 
   - Utiliser la syntaxe litérale pour la création de tableaux.
@@ -77,6 +106,9 @@ Syntaxe générale
       ...
     }
     ```
+    
+**[⬆ retour en haut](#table-des-matières)**
+    
 ## Strings
 
   - Utiliser les simples quotes `'...'` pour les chaines de caractères.
@@ -140,7 +172,9 @@ Syntaxe générale
       return '<ul>' + items.join('') + '</ul>';
     }
     ```
-
+    
+**[⬆ retour en haut](#table-des-matières)**
+    
 ## Fonctions
 
   - Ne jamais déclarer une fonction dans un block (`if`, `while`, etc).
@@ -175,6 +209,8 @@ Syntaxe générale
       // ...stuff...
     }
     ```
+    
+**[⬆ retour en haut](#table-des-matières)**
 
 ## Properties
 
@@ -207,6 +243,8 @@ Syntaxe générale
 
     var isJedi = getProp('jedi');
     ```
+
+**[⬆ retour en haut](#table-des-matières)**
 
 ## Variables
 
@@ -281,7 +319,10 @@ Syntaxe générale
       return true;
     }
     ```
-## Règles de hissage (Hoisting)
+
+**[⬆ retour en haut](#table-des-matières)**
+
+## <a id="hoisting"></a>Regles de hissage (Hoisting) 
 
 Voici un rappel des règles de hissage des symboles dans le scope en javascript (hoisting).
 
@@ -369,7 +410,10 @@ Voici un rappel des règles de hissage des symboles dans le scope en javascript 
 
   - Pour plus d'information [JavaScript Scoping & Hoisting](http://www.adequatelygood.com/2010/2/JavaScript-Scoping-and-Hoisting) par [Ben Cherry](http://www.adequatelygood.com/).
 
-## Operateurs de comparaison & Egalité
+
+**[⬆ retour en haut](#table-des-matières)**
+
+## <a id="comparaison"></a>Opérateurs de comparaison & Egalité
 
   - Utiliser `===` et `!==` plutôt que `==` et `!=`.
 
@@ -405,12 +449,15 @@ Voici un rappel des règles de hissage des symboles dans le scope en javascript 
 
   - Pour plus d'information [Truth Equality and JavaScript](http://javascriptweblog.wordpress.com/2011/02/07/truth-equality-and-javascript/#more-2108) par Angus Croll.
 
+**[⬆ retour en haut](#table-des-matières)**
 
 ## Indentation
 
  * Indentation avec **4 espaces**, pas de tabulations.
 
  * retours à la ligne après **140 caractères** par ligne max.
+
+**[⬆ retour en haut](#table-des-matières)**
 
 ### Accolades
 
@@ -515,6 +562,8 @@ Voici un rappel des règles de hissage des symboles dans le scope en javascript 
     var x = y + 5;
     ```
 
+**[⬆ retour en haut](#table-des-matières)**
+
 ## Virgules
 
   - Pas de virgules au début :
@@ -576,6 +625,8 @@ Voici un rappel des règles de hissage des symboles dans le scope en javascript 
     ];
     ```
 
+**[⬆ retour en haut](#table-des-matières)**
+
 ## Point virgules
 
   - Toujours.
@@ -601,7 +652,9 @@ Voici un rappel des règles de hissage des symboles dans le scope en javascript 
     })();
     ```
 
-## Trans-typage & coercition de type
+**[⬆ retour en haut](#table-des-matières)**
+
+## <a id="coercition"></a>Trans-typage & coercition de type
 
   - Effectuer la coercition de type coercion en début d'expression.
   - Strings:
@@ -659,6 +712,8 @@ Voici un rappel des règles de hissage des symboles dans le scope en javascript 
     var hasAge = !!age;
     ```
 
+**[⬆ retour en haut](#table-des-matières)**
+
 ## Conventions de nommage
 
 ### déclarations de functions / variables
@@ -688,6 +743,8 @@ Voici un rappel des règles de hissage des symboles dans le scope en javascript 
     }
     File.FULL_PERMISSIONS = 0777;
     ```
+
+**[⬆ retour en haut](#table-des-matières)**
 
 ## Accesseurs
 
@@ -721,6 +778,8 @@ Voici un rappel des règles de hissage des symboles dans le scope en javascript 
       return false;
     }
     ```
+
+**[⬆ retour en haut](#table-des-matières)**
 
 ## Constructeurs
 
@@ -786,6 +845,8 @@ Voici un rappel des règles de hissage des symboles dans le scope en javascript 
       .setHeight(20);
     ```
 
+**[⬆ retour en haut](#table-des-matières)**
+
 ## Structures du langage
 
 ### With
@@ -822,6 +883,8 @@ Voici un rappel des règles de hissage des symboles dans le scope en javascript 
     ```javascript
     return val || 'default';
     ```
+
+**[⬆ retour en haut](#table-des-matières)**
 
 ## Règles de codage
 
@@ -871,7 +934,7 @@ Un fichier de source trop gros indique qu'il faut découper et modulariser le co
     
     // good
     var isValidPassword = password.length >= 4 
-			        && /^(?=.*\d).{4,}$/.test(password);
+              && /^(?=.*\d).{4,}$/.test(password);
 
     if (isValidPassword) {
       console.log('winning');
@@ -887,6 +950,8 @@ Un fichier de source trop gros indique qu'il faut découper et modulariser le co
       console.log('winning');
     });
     ```
+
+**[⬆ retour en haut](#table-des-matières)**
 
 ## Spécificités AngularJS
 
@@ -913,6 +978,8 @@ Un fichier de source trop gros indique qu'il faut découper et modulariser le co
 
     Le  `watch` sert à mettre à jour le dom lorsque les données sont modifiées, il faut donc le gérer dans les contrôleurs.
     Les services peuvent utiliser les événements javascript pour notifier d'autres composants.
+
+**[⬆ retour en haut](#table-des-matières)**
 
 ## Spécificités Node.JS
 
@@ -974,6 +1041,8 @@ Un fichier de source trop gros indique qu'il faut découper et modulariser le co
     };
     ```
 
+**[⬆ retour en haut](#table-des-matières)**
+
 ## Sources :
 
  * https://github.com/airbnb/javascript/tree/master/es5
@@ -982,8 +1051,9 @@ Un fichier de source trop gros indique qu'il faut découper et modulariser le co
 
  * http://toddmotto.com/opinionated-angular-js-styleguide-for-teams/
 
-### Node :
+### Node :
 
  * http://blog.izs.me/post/59142742143/designing-apis-for-asynchrony
  * http://blog.ometer.com/2011/07/24/callbacks-synchronous-and-asynchronous/
 
+**[⬆ retour en haut](#table-des-matières)**
