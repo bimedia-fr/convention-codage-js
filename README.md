@@ -1,3 +1,29 @@
+## Table des Matières
+
+  1. [Objects](#objects)
+  1. [Arrays](#arrays)
+  1. [Strings](#strings)
+  1. [Fonctions](#fonctions)
+  1. [Properties](#properties)
+  1. [Variables](#variables)
+  1. [Règles de hissage (Hoisting)](#hoisting)
+  1. [Opérateurs de comparaison & Egalité](#comparaison)
+  1. [Indentation](#indentation)
+  1. [Accolades](#accolades)
+  1. [Virgules](#virgules)
+  1. [Point virgules](#point-virgules)
+  1. [Trans-typage & coercition de type](#coercition)
+  1. [Conventions de nommage](#conventions-de-nommage)
+  1. [Accesseurs](#accesseurs)
+  1. [Constructeurs](#constructeurs)
+  1. [Structures du langage](#structures-du-langage)
+  1. [Règles de codage](#règles-de-codage)
+  1. [Spécificités AngularJS](#spécificités-angularjs)
+  1. [Spécificités Node.JS](#spécificités-nodejs)
+  1. [Sources](#sources)
+
+
+
 Syntaxe générale
 ---------------------
 
@@ -13,7 +39,7 @@ Syntaxe générale
     var item = {};
     ```
 
-  - Eviter d'utiliser de [mots réservés](http://es5.github.io/#x7.6.1) comme clé d'objet.
+  - Eviter d'utiliser des [mots réservés](http://es5.github.io/#x7.6.1) comme clé d'objet.
 
     ```javascript
     // bad
@@ -28,6 +54,9 @@ Syntaxe générale
       hidden: true
     };
     ```
+
+**[⬆ retour en haut](#table-des-matières)**
+    
 ## Arrays
 
   - Utiliser la syntaxe litérale pour la création de tableaux.
@@ -40,7 +69,7 @@ Syntaxe générale
     var items = [];
     ```
 
-  - Utiliser la méthode `Array#push` au lieu d'une affectation direct d'un élément du tableau.
+  - Utiliser la méthode `Array#push` au lieu d'une affectation directe d'un élément du tableau.
 
     ```javascript
     var someStack = [];
@@ -77,6 +106,9 @@ Syntaxe générale
       ...
     }
     ```
+    
+**[⬆ retour en haut](#table-des-matières)**
+    
 ## Strings
 
   - Utiliser les simples quotes `'...'` pour les chaines de caractères.
@@ -140,7 +172,9 @@ Syntaxe générale
       return '<ul>' + items.join('') + '</ul>';
     }
     ```
-
+    
+**[⬆ retour en haut](#table-des-matières)**
+    
 ## Fonctions
 
   - Ne jamais déclarer une fonction dans un block (`if`, `while`, etc).
@@ -175,6 +209,8 @@ Syntaxe générale
       // ...stuff...
     }
     ```
+    
+**[⬆ retour en haut](#table-des-matières)**
 
 ## Properties
 
@@ -208,6 +244,8 @@ Syntaxe générale
     var isJedi = getProp('jedi');
     ```
 
+**[⬆ retour en haut](#table-des-matières)**
+
 ## Variables
 
   - Toujours utiliser le mot clé `var` pour déclarer une variable. Son omission pollue le scope global.
@@ -219,7 +257,7 @@ Syntaxe générale
     // good
     var superPower = new SuperPower();
     ```
-  - Assigner les variable au début de leur scope. Cela permet d'éviter les problèmes de déclaration et de hissage (hoisting) de variable.
+  - Assigner les variables au début de leur scope. Cela permet d'éviter les problèmes de déclaration et de hissage (hoisting) de variable.
 
     ```javascript
     // bad
@@ -281,7 +319,10 @@ Syntaxe générale
       return true;
     }
     ```
-## Règles de hissage (Hoisting)
+
+**[⬆ retour en haut](#table-des-matières)**
+
+## <a id="hoisting"></a>Règles de hissage (Hoisting) 
 
 Voici un rappel des règles de hissage des symboles dans le scope en javascript (hoisting).
 
@@ -313,7 +354,7 @@ Voici un rappel des règles de hissage des symboles dans le scope en javascript 
     }
     ```
 
-  - Les expressions de fonction annonymes hissent leur nom de variable, mais pas l'affectation de la fonction.
+  - Les expressions de fonction anonymes hissent leur nom de variable, mais pas l'affectation de la fonction.
 
     ```javascript
     function example() {
@@ -327,7 +368,7 @@ Voici un rappel des règles de hissage des symboles dans le scope en javascript 
     }
     ```
 
-  - Les expression de fonction nommées hissent leurs variable, mais pas le nom ou le corps de la fonction.
+  - Les expressions de fonction nommées hissent leurs variables, mais pas le nom ou le corps de la fonction.
 
     ```javascript
     function example() {
@@ -355,7 +396,7 @@ Voici un rappel des règles de hissage des symboles dans le scope en javascript 
     }
     ```
 
-  - Les déclaration de fonction hissent leur nom et le corps de la fonction.
+  - Les déclarations de fonction hissent leur nom et le corps de la fonction.
 
     ```javascript
     function example() {
@@ -369,11 +410,14 @@ Voici un rappel des règles de hissage des symboles dans le scope en javascript 
 
   - Pour plus d'information [JavaScript Scoping & Hoisting](http://www.adequatelygood.com/2010/2/JavaScript-Scoping-and-Hoisting) par [Ben Cherry](http://www.adequatelygood.com/).
 
-## Operateurs de comparaison & Egalité
+
+**[⬆ retour en haut](#table-des-matières)**
+
+## <a id="comparaison"></a>Opérateurs de comparaison & Egalité
 
   - Utiliser `===` et `!==` plutôt que `==` et `!=`.
 
-  - Les clause conditionnelles comme `if` statement évaluent leurs expression en utilisant la coercition de type avec la méthode abstraite `ToBoolean` qui suit toujours ces règles simples:
+  - Les clause conditionnelles comme `if` évaluent leurs expressions en utilisant la coercition de type avec la méthode abstraite `ToBoolean` qui suit toujours ces règles simples:
 
     + **Objects** sont évalués à **true**
     + **Undefined** est évalué à **false**
@@ -405,12 +449,15 @@ Voici un rappel des règles de hissage des symboles dans le scope en javascript 
 
   - Pour plus d'information [Truth Equality and JavaScript](http://javascriptweblog.wordpress.com/2011/02/07/truth-equality-and-javascript/#more-2108) par Angus Croll.
 
+**[⬆ retour en haut](#table-des-matières)**
 
 ## Indentation
 
  * Indentation avec **4 espaces**, pas de tabulations.
 
- * retours à la ligne après **140 caractères** par ligne max.
+ * Retour à la ligne après **140 caractères** par ligne max.
+
+**[⬆ retour en haut](#table-des-matières)**
 
 ### Accolades
 
@@ -455,7 +502,7 @@ Voici un rappel des règles de hissage des symboles dans le scope en javascript 
     }
     ```
 
-  - Laisser un espace entre 1 espace avant l'accolade ouvrante.
+  - Laisser un espace avant l'accolade ouvrante.
 
     ```javascript
     // bad
@@ -481,7 +528,7 @@ Voici un rappel des règles de hissage des symboles dans le scope en javascript 
     });
     ```
 
-  - Laisser un space avant la parenthèse ouvrante d'une clause de contrôle (`if`, `while` etc.). Ne pas laisser d'espace avant la liste d'argument pour les déclarations et appels de fonctions.
+  - Laisser un espace avant la parenthèse ouvrante d'une clause de contrôle (`if`, `while` etc.). Ne pas laisser d'espace avant la liste d'argument pour les déclarations et appels de fonctions.
 
     ```javascript
     // bad
@@ -515,9 +562,11 @@ Voici un rappel des règles de hissage des symboles dans le scope en javascript 
     var x = y + 5;
     ```
 
+**[⬆ retour en haut](#table-des-matières)**
+
 ## Virgules
 
-  - Pas de virgules au début :
+  - Pas de virgule au début de la ligne :
 
     ```javascript
     // bad
@@ -550,7 +599,7 @@ Voici un rappel des règles de hissage des symboles dans le scope en javascript 
       superPower: 'strength'
     };
     ```
-  - Pas de virgule supplémentaire à la fin: Cela peut poser problème sur IE9 en quirksmode. 
+  - Pas de virgule supplémentaire à la fin. Cela peut poser problème sur IE9 en quirksmode. 
 
     ```javascript
     // bad
@@ -575,6 +624,8 @@ Voici un rappel des règles de hissage des symboles dans le scope en javascript 
       'Superman'
     ];
     ```
+
+**[⬆ retour en haut](#table-des-matières)**
 
 ## Point virgules
 
@@ -601,9 +652,11 @@ Voici un rappel des règles de hissage des symboles dans le scope en javascript 
     })();
     ```
 
-## Trans-typage & coercition de type
+**[⬆ retour en haut](#table-des-matières)**
 
-  - Effectuer la coercition de type coercion en début d'expression.
+## <a id="coercition"></a>Trans-typage & coercition de type
+
+  - Effectuer la coercition de type en début d'expression.
   - Strings:
 
     ```javascript
@@ -659,11 +712,13 @@ Voici un rappel des règles de hissage des symboles dans le scope en javascript 
     var hasAge = !!age;
     ```
 
+**[⬆ retour en haut](#table-des-matières)**
+
 ## Conventions de nommage
 
-### déclarations de functions / variables
+### déclarations de fonctions / variables
 
-  - Utiliser le [lower camel-case](http://fr.wikipedia.org/wiki/CamelCase#Variations%20et%20synonymes) pour les nom de fonctions, méthodes et variables.
+  - Utiliser le [lower camel-case](http://fr.wikipedia.org/wiki/CamelCase#Variations%20et%20synonymes) pour les noms de fonctions, méthodes et variables.
 
     ```javascript
     function maFonction(maVariable) {
@@ -689,10 +744,12 @@ Voici un rappel des règles de hissage des symboles dans le scope en javascript 
     File.FULL_PERMISSIONS = 0777;
     ```
 
+**[⬆ retour en haut](#table-des-matières)**
+
 ## Accesseurs
 
-  - L'accès aus propriétés via des fonctions accesseurs n'est pas nécessaire.
-  - Si toutefois vous créez des fonctions accesseurs utiliser la convention `getVal()` and `setVal('hello')` (~ JavaBeans).
+  - L'accès aux propriétés via des fonctions accesseurs n'est pas nécessaire.
+  - Si toutefois vous créez des fonctions accesseurs utiliser la convention `getVal()` et `setVal('hello')` (~ JavaBeans).
 
     ```javascript
     // bad
@@ -708,7 +765,7 @@ Voici un rappel des règles de hissage des symboles dans le scope en javascript 
     dragon.setAge(25);
     ```
 
-  - Si la propriété est un booléen, utiliser la convention `isVal()` or `hasVal()`.
+  - Si la propriété est un booléen, utiliser la convention `isVal()` ou `hasVal()`.
 
     ```javascript
     // bad
@@ -722,9 +779,11 @@ Voici un rappel des règles de hissage des symboles dans le scope en javascript 
     }
     ```
 
+**[⬆ retour en haut](#table-des-matières)**
+
 ## Constructeurs
 
-  - Assigner les methods a l'objet prototype, au lieu d'écraser le prototype avec un nouvel objet. L'écrasement du prototype rend l'héritage impossible: en écrasant le prototype vous perdez le protoype de base !
+  - Assigner les méthodes à l'objet prototype, au lieu d'écraser le prototype avec un nouvel objet. L'écrasement du prototype rend l'héritage impossible: en écrasant le prototype vous perdez le prototype de base !
 
     ```javascript
     function Jedi() {
@@ -786,6 +845,8 @@ Voici un rappel des règles de hissage des symboles dans le scope en javascript 
       .setHeight(20);
     ```
 
+**[⬆ retour en haut](#table-des-matières)**
+
 ## Structures du langage
 
 ### With
@@ -796,7 +857,7 @@ Voici un rappel des règles de hissage des symboles dans le scope en javascript 
 
   - Limiter l'utilisation du switch. cf [Todd Motto](deprecating-the-switch-statement-for-object-literals)
 
-    La plus part du temps la construction peut être remplacée par un objet litéral et permet d'obtenir du code plus simple et plus facilement testable.
+    La plupart du temps la construction peut être remplacée par un objet littéral et permet d'obtenir du code plus simple et plus facilement testable.
 
 ### for..in
 
@@ -811,9 +872,9 @@ Voici un rappel des règles de hissage des symboles dans le scope en javascript 
 
     ```
 
-### utilisation du ternaire
+### Utilisation du ternaire
 
-  - Préférer l'utilisation de l'opérateur `||` pour gérer les valeurs par défaut lorque cela est possible.
+  - Préférer l'utilisation de l'opérateur `||` pour gérer les valeurs par défaut lorsque cela est possible.
 
     ```javascript
     return val ? val : 'default';
@@ -823,29 +884,30 @@ Voici un rappel des règles de hissage des symboles dans le scope en javascript 
     return val || 'default';
     ```
 
+**[⬆ retour en haut](#table-des-matières)**
+
 ## Règles de codage
 
 ### Ne pas étendre les prototypes de base
 
 La modification des prototypes de base du langage (Object, Array, Date, Function, ...)  
-est [compliquée, risquée](https://github.com/felixge/node-style-guide#do-not-extend-built-in-prototypes)
- et déroutant. 
+est [compliquée, risquée](https://github.com/felixge/node-style-guide#do-not-extend-built-in-prototypes) et déroutant. 
 
-### Garder des fonctions petites
+### Garder les fonctions petites
 
   - Les fonctions ne doivent pas faire plus de **25 lignes**.
 
 Une fonction doit faire une seule chose et doit être facilement compréhensible.
 
-### Garder des fichiers petits
+### Garder les fichiers petits
 
   - Les fichiers ne doivent pas faire plus de **750 lignes**.
 
 Un fichier de source trop gros indique qu'il faut découper et modulariser le code.
 
-### Retourner rapidement des fonctions
+### Retourner rapidement les fonctions
 
-  - Eviter l'imbrication trop complexe de condition en retournant dès que possible des fonctions.
+  - Eviter l'imbrication trop complexe de conditions en retournant dès que possible les fonctions.
 
     ```javascript
     function isPercentage(val) {
@@ -861,7 +923,7 @@ Un fichier de source trop gros indique qu'il faut découper et modulariser le co
 
 ### Utiliser des conditions descriptives
 
-  - Assigner les expression booléénnes à des variable pour expliciter la condition.
+  - Assigner les expressions booléennes à des variables pour expliciter la condition.
 
     ```javascript
     // bad
@@ -871,7 +933,7 @@ Un fichier de source trop gros indique qu'il faut découper et modulariser le co
     
     // good
     var isValidPassword = password.length >= 4 
-			        && /^(?=.*\d).{4,}$/.test(password);
+              && /^(?=.*\d).{4,}$/.test(password);
 
     if (isValidPassword) {
       console.log('winning');
@@ -888,11 +950,13 @@ Un fichier de source trop gros indique qu'il faut découper et modulariser le co
     });
     ```
 
+**[⬆ retour en haut](#table-des-matières)**
+
 ## Spécificités AngularJS
 
 ### Appels de services 
 
-  - Ne pas faire les appels http directement dans les controllers.
+  - Ne pas faire les appels http directement dans les contrôleurs.
 
     Il vaut mieux utiliser un service pour encapsuler l'appel http.
 
@@ -914,6 +978,8 @@ Un fichier de source trop gros indique qu'il faut découper et modulariser le co
     Le  `watch` sert à mettre à jour le dom lorsque les données sont modifiées, il faut donc le gérer dans les contrôleurs.
     Les services peuvent utiliser les événements javascript pour notifier d'autres composants.
 
+**[⬆ retour en haut](#table-des-matières)**
+
 ## Spécificités Node.JS
 
 ### Appels asynchrones
@@ -921,7 +987,7 @@ Un fichier de source trop gros indique qu'il faut découper et modulariser le co
   - éviter d'imbriquer plus de 2 appels de méthode asynchrones. cf [Callback Hell](http://callbackhell.com/)
 
     L'imbrication de nombreuses méthodes asynchrones rends le flux d'exécution très difficilement compréhensible.
-    Extraires les méthode et le nommer. Dans le cas d'appels nombreux utiliser la 
+    Extraire les méthodes et les nommer. Dans le cas d'appels nombreux utiliser la 
     librairie [async](https://www.npmjs.org/package/async).
     
     ```javascript
@@ -948,8 +1014,7 @@ Un fichier de source trop gros indique qu'il faut découper et modulariser le co
 
   - Garder les appels asynchrones
 
-    Lorsqu'une méthode est asynchrone tous les chemins d'exécution doivent être asynchrone, sinon vous risquez 
-    de [libérer Zalgo](http://blog.izs.me/post/59142742143/designing-apis-for-asynchrony).
+    Lorsqu'une méthode est asynchrone tous les chemins d'exécution doivent être asynchrone, sinon vous risquez de [libérer Zalgo](http://blog.izs.me/post/59142742143/designing-apis-for-asynchrony).
 
     ```javascript
     // bad
@@ -974,7 +1039,9 @@ Un fichier de source trop gros indique qu'il faut découper et modulariser le co
     };
     ```
 
-## Sources :
+**[⬆ retour en haut](#table-des-matières)**
+
+## Sources
 
  * https://github.com/airbnb/javascript/tree/master/es5
 
@@ -982,8 +1049,9 @@ Un fichier de source trop gros indique qu'il faut découper et modulariser le co
 
  * http://toddmotto.com/opinionated-angular-js-styleguide-for-teams/
 
-### Node :
+### Node :
 
  * http://blog.izs.me/post/59142742143/designing-apis-for-asynchrony
  * http://blog.ometer.com/2011/07/24/callbacks-synchronous-and-asynchronous/
 
+**[⬆ retour en haut](#table-des-matières)**
