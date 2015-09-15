@@ -6,7 +6,7 @@ Utile pour aggréger des tableaux imbriqués dans une grappe d'objet.
 Par exemple, avec le tableau suivant :
 
 ```js
-var data : [
+var data = [
  {
     tickets : [
         {payments :[ {amount: 1}, {amount: 3}]}, 
