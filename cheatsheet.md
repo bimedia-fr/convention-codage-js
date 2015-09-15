@@ -9,9 +9,10 @@ Par exemple, avec le tableau suivant :
 var data : [
  {
     tickets : [
-        {payments :[ {amount: 1}, {amount: 3}]}, {payments :[/*...*/]}, {payments :[/*...*/]}]}
-    ],
- {
+        {payments :[ {amount: 1}, {amount: 3}]}, 
+        {payments :[/*...*/]}, {payments :[/*...*/]}]}
+    ]
+ }, {
     tickets : [
         {payments :[/*...*/]}
     ]
@@ -40,5 +41,6 @@ function flatten(arr, keys) {
 Cela devient simplement :
 
 ```js
-    var total = flatten(data, 'tickets.payments.amount').reduce(function(pv, cv) { return pv + cv; }, 0);
+var total = flatten(data, 'tickets.payments.amount')
+                .reduce(function(pv, cv) { return pv + cv; }, 0);
 ```
