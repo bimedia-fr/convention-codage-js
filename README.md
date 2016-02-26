@@ -1038,6 +1038,34 @@ Un fichier de source trop gros indique qu'il faut découper et modulariser le co
         });
     };
     ```
+    
+  - Créer des erreurs personnalisées
+
+    Il est préférable de créer ses propre types d'erreurs afin de faciliter la gestion d'erreur. En effet on peut vérifier le type de l'erreur reçue afin d'adapter le gestion.
+  
+    exemple de création d'une erreure personnalisée :
+    
+    ```javascript
+    var Util = require('util');
+
+    function CampaignReferenceError(message) {
+        Error.call(this);
+        Error.captureStackTrace(this);
+        this.message = message;
+    }
+    Util.inherits(CampaignReferenceError, Error);
+    ```
+    
+    exemple d'utilisation d'une erreure personnalisée :
+    
+    ```javascript
+    someAsyncfunc(function(err, res) {
+        if (err instanceof CampaignReferenceError) {
+            console.log('I know that error !');
+        }
+        //...
+    });
+    ```
 
 **[⬆ retour en haut](#table-des-matières)**
 
