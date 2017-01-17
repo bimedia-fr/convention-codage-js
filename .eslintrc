@@ -1,26 +1,59 @@
 {
+    "extends": "eslint:recommended",
+    "env": {
+        "node": true,
+        "browser": true,
+        "es6": false
+    },
+    "globals": {
+        "module": true,
+        "require": true,
+        "define": true
+    },
+    "parserOptions": {
+        "sourceType": "module"
+    },
     "ecmaFeatures": {
         "blockBindings": true,
         "forOf": true,
         "modules": true
     },
-    "env": {
-        "node": true
-    },
     "rules": {
-        "indent": 2,
-        "vars-on-top": 2,
-        "no-reserved-keys": 2,
+        "no-console": 1,
         "no-extra-semi": 2,
-        "no-underscore-dangle": 0,
-        "max-len": [2, 140, 4],
-        "accessor-pairs": [2, {"getWithoutSet": true}],
-        "quotes": [2, "single", "avoid-escape"],
-        "max-statements": [1, 25],
+        "no-irregular-whitespace": 2,
+        "accessor-pairs": [2, {
+            "getWithoutSet": true
+        }],
+        "dot-location": [1, "property"],
+        "eqeqeq": [2, "smart"],
+        "no-eval": 2,
         "no-multi-str": 0,
-        "no-trailing-spaces": [2, { skipBlankLines: true }],
+        "vars-on-top": 2,
+        "no-unused-vars": [1, {
+            "vars": "all",
+            "args": "after-used"
+        }],
         "camelcase": [2, {
-                "properties": "never"
-            }]
+            "properties": "never"
+        }],
+        "eol-last": [2, "always"],
+        "indent": [2, "spaces"],
+        "linebreak-style": [2, "unix"],
+        "max-len": [2, 140, 4],
+        "max-statements": [1, 25],
+        "no-mixed-spaces-and-tabs": 2,
+        "no-multiple-empty-lines": [1, {
+            "max": 2,
+            "maxBOF": 0,
+            "maxEOF": 1
+        }],
+        "no-negated-condition": 1,
+        "no-trailing-spaces": 2,
+        "no-underscore-dangle": 0,
+        "no-whitespace-before-property": 2,
+        "quote-props": [2, "consistent-as-needed"],
+        "quotes": [2, "single", "avoid-escape"],
+        "spaced-comment": [1, "always"]
     }
 }
