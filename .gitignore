@@ -3,3 +3,5 @@
 # Example .gitignore files: https://github.com/github/gitignore
 /node_modules/
 /*.pdf
+*.swp
+npm-debug.log*
