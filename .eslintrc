@@ -35,7 +35,7 @@
             "properties": "never"
         }],
         "eol-last": [2, "always"],
-        "indent": [2, "spaces"],
+        "indent": [2, 4],
         "linebreak-style": [2, "unix"],
         "max-len": [2, 140, 4],
         "max-statements": [1, 25],
