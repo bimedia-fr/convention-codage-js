@@ -22,9 +22,6 @@
         "no-console": 1,
         "no-extra-semi": 2,
         "no-irregular-whitespace": 2,
-        "accessor-pairs": [2, {
-            "getWithoutSet": true
-        }],
         "dot-location": [1, "property"],
         "eqeqeq": [2, "smart"],
         "no-eval": 2,
@@ -52,7 +49,7 @@
         "no-trailing-spaces": 2,
         "no-underscore-dangle": 0,
         "no-whitespace-before-property": 2,
-        "quote-props": [2, "consistent-as-needed"],
+        "quote-props": [2, "as-needed"],
         "quotes": [2, "single", "avoid-escape"],
         "spaced-comment": [1, "always"]
     }
