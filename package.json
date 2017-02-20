@@ -1,0 +1,19 @@
+{
+  "name": "conventions-codage-js",
+  "version": "1.0.0",
+  "description": "bimedia js code conventions",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bimedia-fr/conventions-codage-js.git"
+  },
+  "author": "jerome creignou",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bimedia-fr/conventions-codage-js/issues"
+  },
+  "homepage": "https://github.com/bimedia-fr/conventions-codage-js#readme"
+}
