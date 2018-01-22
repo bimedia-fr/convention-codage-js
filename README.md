@@ -455,7 +455,9 @@ Voici un rappel des règles de hissage des symboles dans le scope en javascript 
 
  * Indentation avec **4 espaces**, pas de tabulations.
 
- * Retour à la ligne après **140 caractères** par ligne max.
+ * Retour à la ligne après **140 caractères** par ligne max pour le code.
+
+ * Retour à la ligne après **100 caractères** par ligne max pour les commentaires.
 
 **[⬆ retour en haut](#table-des-matières)**
 
