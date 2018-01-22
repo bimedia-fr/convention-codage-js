@@ -1,0 +1,12 @@
+{
+    "eslint.enable": true,
+    "eslint.options": {
+        "configFile": ".eslintrc.json"
+    },
+    "files.autoSave": "afterDelay",
+    "files.autoSaveDelay": 2000,
+    "[javascript]": {
+        "editor.insertSpaces": false,
+        "editor.tabSize": 4
+  }
+}
