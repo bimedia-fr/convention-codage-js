@@ -5,6 +5,7 @@
     },
     "files.autoSave": "afterDelay",
     "files.autoSaveDelay": 2000,
+    "editor.detectIndentation": false,
     "[javascript]": {
         "editor.insertSpaces": true,
         "editor.tabSize": 4
