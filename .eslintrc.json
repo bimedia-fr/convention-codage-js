@@ -73,6 +73,8 @@
         "spaced-comment": [
             "error",
             "always"
+        ],
+        "no-process-exit": "error"
         ]
     }
 }
